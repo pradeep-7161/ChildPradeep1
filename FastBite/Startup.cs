@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FoodDelivery.Repository;
-using FoodDelivery.Service.Foods;
+using FastBite.Repository;
+using FastBite.Service.Foods;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -13,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace FoodDelivery
+namespace FastBite
 {
     public class Startup
     {
@@ -32,7 +32,7 @@ namespace FoodDelivery
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DatabaseConnection"),
-                builder => builder.MigrationsAssembly("FoodDelivery")));
+                builder => builder.MigrationsAssembly("FastBite")));
 
             services.Configure<CookiePolicyOptions>(options =>
             {
